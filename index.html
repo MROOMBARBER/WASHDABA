@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WashDaba - Lavage Auto à Domicile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        .hero-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- En-tête -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2 text-blue-700 font-bold text-2xl tracking-tight">
+                <i class="fas fa-car-wash"></i>
+                <span>WashDaba</span>
+            </div>
+            <div class="hidden md:flex gap-8 font-medium">
+                <a href="#services" class="hover:text-blue-600 transition">Services</a>
+                <a href="#about" class="hover:text-blue-600 transition">À Propos</a>
+            </div>
+            <a href="https://wa.me/212612650112" target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full font-bold transition-all flex items-center gap-2 shadow-lg shadow-green-200">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+        </nav>
+    </header>
+
+    <!-- Section Héros -->
+    <section class="hero-gradient text-white py-20 px-6">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl md:text-7xl font-extrabold mb-6 leading-tight">
+                Le Lavage Auto <br><span class="text-blue-200 text-3xl md:text-5xl">Vient à Vous !</span>
+            </h1>
+            <p class="text-lg md:text-xl mb-12 text-blue-100 max-w-2xl mx-auto font-light">
+                Un service de nettoyage professionnel, rapide et soigné directement chez vous ou à votre bureau. Plus besoin de vous déplacer !
+            </p>
+            <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                <a href="https://wa.me/212612650112?text=Bonjour WashDaba, je souhaite commander un lavage" target="_blank" rel="noopener noreferrer" class="bg-white text-blue-700 px-10 py-5 rounded-2xl font-bold text-xl hover:bg-blue-50 transition-all shadow-xl hover:-translate-y-1">
+                    Commander maintenant
+                </a>
+                <a href="#services" class="border-2 border-white/40 px-10 py-5 rounded-2xl font-bold text-xl hover:bg-white/10 transition-all">
+                    Nos Tarifs
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pourquoi nous ? -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+                <div class="p-6">
+                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-clock"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Gain de Temps</h3>
+                    <p class="text-gray-600 text-sm">On s'occupe de tout pendant que vous vous reposez ou travaillez.</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-hand-sparkles"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Service Premium</h3>
+                    <p class="text-gray-600 text-sm">Des produits de haute qualité pour protéger votre peinture et votre intérieur.</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-mobile-alt"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Facile & Rapide</h3>
+                    <p class="text-gray-600 text-sm">Une simple commande WhatsApp et notre équipe arrive chez vous.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Services -->
+    <section id="services" class="py-20 px-6 bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Nos Packs de Lavage</h2>
+                <div class="h-1.5 w-24 bg-blue-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Lavage Silver (Modifié) -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-14 h-14 bg-gray-100 text-gray-600 rounded-2xl flex items-center justify-center text-2xl">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <div class="text-3xl font-black text-gray-800">100<span class="text-sm font-bold">DH</span></div>
+                    </div>
+                    <h3 class="text-2xl font-extrabold mb-4">Lavage Silver</h3>
+                    <ul class="text-gray-600 space-y-3 mb-8 flex-grow">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Lavage extérieur</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Nettoyage intérieur</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> <strong>Aspirateur Professionnel</strong></li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> <strong>Nettoyage des Jantes</strong></li>
+                    </ul>
+                    <a href="https://wa.me/212612650112?text=Je veux le pack Silver (100DH)" target="_blank" rel="noopener noreferrer" class="block text-center bg-gray-800 text-white py-4 rounded-xl font-bold hover:bg-gray-700 transition">Choisir Silver</a>
+                </div>
+
+                <!-- Lavage Gold -->
+                <div class="bg-white p-8 rounded-3xl shadow-2xl border-2 border-blue-600 relative scale-105 z-10 flex flex-col">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-6 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">
+                        Recommandé
+                    </div>
+                    <div class="flex justify-between items-start mb-6 text-blue-600">
+                        <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-2xl">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="text-3xl font-black">150<span class="text-sm font-bold">DH</span></div>
+                    </div>
+                    <h3 class="text-2xl font-extrabold mb-4">Lavage Gold</h3>
+                    <ul class="text-gray-600 space-y-3 mb-8 flex-grow text-sm">
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Lavage Complet Expert</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Parfumage habitacle</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Dégraissage jantes approfondi</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Traitement plastiques</li>
+                    </ul>
+                    <a href="https://wa.me/212612650112?text=Je veux le pack Gold (150DH)" target="_blank" rel="noopener noreferrer" class="block text-center bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-200">Choisir Gold</a>
+                </div>
+
+                <!-- Lavage Platinum -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-14 h-14 bg-yellow-100 text-yellow-600 rounded-2xl flex items-center justify-center text-2xl">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <div class="text-3xl font-black text-gray-800">500<span class="text-sm font-bold">DH</span></div>
+                    </div>
+                    <h3 class="text-2xl font-extrabold mb-4">Lavage Platinum</h3>
+                    <ul class="text-gray-600 space-y-3 mb-8 flex-grow text-sm">
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i> Tout le pack Gold</li>
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i> <strong>Polissage Carrosserie</strong></li>
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i> Lavage moteur</li>
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i> Shampoing sièges & tapis</li>
+                    </ul>
+                    <a href="https://wa.me/212612650112?text=Je veux le pack Platinum (500DH)" target="_blank" rel="noopener noreferrer" class="block text-center bg-yellow-600 text-white py-4 rounded-xl font-bold hover:bg-yellow-700 transition shadow-lg shadow-yellow-100 text-black">Choisir Platinum</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer class="bg-gray-900 text-white py-16 px-6">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-3xl font-bold mb-6">Prêt pour une voiture comme neuve ?</h2>
+            <p class="mb-10 text-gray-400">Contactez-nous directement sur WhatsApp. Nous sommes disponibles pour répondre à vos questions.</p>
+            
+            <div class="bg-gray-800 p-8 rounded-3xl border border-gray-700 inline-block mb-10">
+                <p class="text-gray-400 mb-2 uppercase tracking-widest text-xs font-bold">Appelez ou écrivez-nous au</p>
+                <p class="text-3xl font-mono font-bold text-white tracking-widest">+212 612 65 01 12</p>
+            </div>
+
+            <div class="flex justify-center gap-6 mb-12">
+                <a href="https://wa.me/212612650112" target="_blank" rel="noopener noreferrer" class="bg-green-500 p-4 rounded-full text-2xl hover:bg-green-600 transition shadow-lg"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="bg-blue-600 p-4 rounded-full text-2xl hover:bg-blue-700 transition shadow-lg"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="bg-pink-600 p-4 rounded-full text-2xl hover:bg-pink-700 transition shadow-lg"><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <p class="text-gray-500 text-sm">© 2024 WashDaba Lavage. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Button Mobile -->
+    <a href="https://wa.me/212612650112" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 active:scale-95 transition-all z-[100] animate-bounce md:animate-none">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
