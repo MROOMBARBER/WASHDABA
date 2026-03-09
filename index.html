@@ -3,32 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WashDaba - Lavage Auto à Domicile</title>
+    
+    <!-- SEO Fondamental -->
+    <title>WashDaba | Lavage Auto à Domicile Casablanca | Lavage Premium & Maroc</title>
+    <meta name="description" content="WashDaba : Le meilleur service de lavage auto à domicile à Casablanca. Lavage Premium, Wash Car, et nettoyage professionnel partout au Maroc. Commandez via WhatsApp !">
+    <meta name="keywords" content="lavage domicile casablanca, wash car, lavage casablancais, lavage californien, lavage maroc, nettoyage voiture domicile Casablanca, WashDaba">
+    <meta name="author" content="WashDaba">
+    <link rel="canonical" href="https://washdaba.com/">
+
+    <!-- Social Media (Open Graph) -->
+    <meta property="og:title" content="WashDaba - Lavage Auto à Domicile Premium à Casablanca">
+    <meta property="og:description" content="Une voiture propre sans bouger de chez vous. Lavage premium et services experts à Casablanca et partout au Maroc.">
+    <meta property="og:image" content="https://i.postimg.cc/0NRcqCpc/photo-5857324030485007518-y.jpg">
+    <meta property="og:url" content="https://washdaba.com/">
+    <meta property="og:type" content="website">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
         
-        /* Background avec l'image que tu as envoyée */
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            scroll-behavior: smooth; 
+            overflow-x: hidden;
+            background-color: #f9fafb;
+        }
+        
+        /* Background Hero Fix Mobile */
         .hero-section { 
             background: linear-gradient(rgba(13, 30, 77, 0.85), rgba(30, 58, 138, 0.7)), 
                         url('https://i.postimg.cc/0NRcqCpc/photo-5857324030485007518-y.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            position: relative;
+            z-index: 20;
         }
 
-        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        @media (max-width: 768px) {
+            .hero-section { background-attachment: scroll; }
+        }
+
+        /* Animation Arrière-plan (Eau, Savon, Voitures) */
+        #bg-animation-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .floating-element {
+            position: absolute;
+            bottom: -100px;
+            opacity: 0;
+            animation: float-up linear infinite;
+            color: #3b82f6; /* Blue-500 */
+            filter: blur(0.5px);
+        }
+
+        @keyframes float-up {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.2; }
+            90% { opacity: 0.2; }
+            100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Animation FEU ET VAPEUR (Pack Premium) */
+        @keyframes fire-steam-glow {
+            0% { 
+                box-shadow: 0 0 15px rgba(249, 115, 22, 0.5), 0 -5px 20px rgba(255, 255, 255, 0.1); 
+                border-color: #f97316;
+            }
+            50% { 
+                box-shadow: 0 -10px 35px rgba(234, 88, 12, 0.7), 0 -20px 50px rgba(200, 200, 200, 0.4); 
+                border-color: #fbbf24;
+                transform: scale(1.05);
+            }
+            100% { 
+                box-shadow: 0 0 15px rgba(249, 115, 22, 0.5), 0 -5px 20px rgba(255, 255, 255, 0.1); 
+                border-color: #f97316;
+            }
+        }
+
+        .premium-fire-steam {
+            animation: fire-steam-glow 3s infinite ease-in-out;
+            position: relative;
+            background: white;
+            z-index: 30;
+        }
+
+        /* Effet de vapeur montante sur le bouton ou la carte */
+        .premium-fire-steam::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 40px;
+            background: radial-gradient(ellipse at center, rgba(255,255,255,0.4) 0%, transparent 70%);
+            filter: blur(10px);
+            pointer-events: none;
+            animation: steam-drift 4s infinite alternate;
+        }
+
+        @keyframes steam-drift {
+            from { opacity: 0.3; transform: translateX(-55%) translateY(0); }
+            to { opacity: 0.6; transform: translateX(-45%) translateY(-10px); }
+        }
+
+        @keyframes custom-bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-soft-bounce {
+            animation: custom-bounce 3s infinite ease-in-out;
+        }
+
+        section { position: relative; z-index: 10; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="text-gray-900">
 
-    <!-- En-tête -->
+    <!-- Arrière-plan avec animation flottante -->
+    <div id="bg-animation-container"></div>
+
+    <!-- Header -->
     <header class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-2 text-blue-700 font-bold text-2xl tracking-tight">
-                <i class="fas fa-car-wash"></i>
+                <i class="fas fa-car-wash" aria-hidden="true"></i>
                 <span>WashDaba</span>
             </div>
             <div class="hidden md:flex gap-8 font-medium">
@@ -41,60 +150,60 @@
         </nav>
     </header>
 
-    <!-- Section Héros avec l'image -->
+    <!-- Hero Section -->
     <section class="hero-section text-white py-24 md:py-32 px-6">
         <div class="container mx-auto text-center">
             <h1 class="text-4xl md:text-7xl font-extrabold mb-6 leading-tight">
-                Le Lavage Auto <br><span class="text-blue-300 text-3xl md:text-5xl uppercase tracking-widest">Premium à Domicile</span>
+                Lavage Domicile Casablanca <br><span class="text-blue-300 text-3xl md:text-5xl uppercase tracking-widest">Lavage à Domicile Premium</span>
             </h1>
             <p class="text-lg md:text-xl mb-12 text-blue-50 max-w-2xl mx-auto font-light">
-                Une propreté irréprochable sans bouger de chez vous. Découvrez l'expérience WashDaba partout où vous êtes.
+                Spécialiste du <strong>Wash Car</strong> et du lavage casablancais. Une propreté irréprochable partout au Maroc sans bouger de chez vous.
             </p>
             <div class="flex flex-col sm:flex-row gap-5 justify-center">
                 <a href="https://wa.me/212612650112?text=Bonjour WashDaba, je souhaite commander un lavage" target="_blank" rel="noopener noreferrer" class="bg-white text-blue-900 px-10 py-5 rounded-2xl font-bold text-xl hover:bg-blue-50 transition-all shadow-xl hover:-translate-y-1">
-                    Commander maintenant
+                    Commander mon Lavage
                 </a>
                 <a href="#services" class="bg-blue-600/20 backdrop-blur-sm border-2 border-white/40 px-10 py-5 rounded-2xl font-bold text-xl hover:bg-white/20 transition-all">
-                    Nos Tarifs
+                    Tarifs Lavage Maroc
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Pourquoi nous ? -->
-    <section id="about" class="py-16 bg-white">
+    <!-- Why Us Section -->
+    <section id="about" class="py-16 bg-white/70 backdrop-blur-sm">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
                 <div class="p-6">
                     <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-clock"></i></div>
-                    <h3 class="text-xl font-bold mb-2">Gain de Temps</h3>
-                    <p class="text-gray-600 text-sm">On s'occupe de tout pendant que vous vous reposez ou travaillez.</p>
+                    <h2 class="text-xl font-bold mb-2">Lavage Domicile Rapide</h2>
+                    <p class="text-gray-600 text-sm">Nous intervenons rapidement pour votre lavage domicile casablanca, chez vous ou au bureau.</p>
                 </div>
                 <div class="p-6">
                     <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-hand-sparkles"></i></div>
-                    <h3 class="text-xl font-bold mb-2">Service Premium</h3>
-                    <p class="text-gray-600 text-sm">Des produits de haute qualité pour protéger votre peinture et votre intérieur.</p>
+                    <h2 class="text-xl font-bold mb-2">Lavage Casablancais Expert</h2>
+                    <p class="text-gray-600 text-sm">Une expertise locale avec des standards internationaux de Wash Car pour votre véhicule.</p>
                 </div>
                 <div class="p-6">
                     <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-mobile-alt"></i></div>
-                    <h3 class="text-xl font-bold mb-2">Facile & Rapide</h3>
-                    <p class="text-gray-600 text-sm">Une simple commande WhatsApp et notre équipe arrive chez vous.</p>
+                    <h2 class="text-xl font-bold mb-2">Commande Facile</h2>
+                    <p class="text-gray-600 text-sm">Le meilleur du lavage Maroc accessible en un clic via notre bouton WhatsApp.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Services -->
-    <section id="services" class="py-20 px-6 bg-gray-50">
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-6 bg-gray-50/40 backdrop-blur-sm">
         <div class="container mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4">Nos Packs de Lavage</h2>
+                <h2 class="text-4xl font-bold mb-4">Nos Services de Lavage Maroc</h2>
                 <div class="h-1.5 w-24 bg-blue-600 mx-auto rounded-full"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
                 <!-- Lavage Silver -->
-                <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all flex flex-col">
+                <div class="bg-white/90 p-8 rounded-3xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all flex flex-col">
                     <div class="flex justify-between items-start mb-6">
                         <div class="w-14 h-14 bg-gray-100 text-gray-600 rounded-2xl flex items-center justify-center text-2xl">
                             <i class="fas fa-tint"></i>
@@ -103,37 +212,37 @@
                     </div>
                     <h3 class="text-2xl font-extrabold mb-4">Lavage Silver</h3>
                     <ul class="text-gray-600 space-y-3 mb-8 flex-grow">
-                        <li><i class="fas fa-check text-green-500 mr-2"></i> Lavage extérieur</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i> Nettoyage intérieur</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i> Aspirateur Professionnel</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i> Nettoyage des Jantes</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Lavage extérieur complet</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Nettoyage intérieur soigné</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Aspirateur professionnel</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Nettoyage des jantes</li>
                     </ul>
                     <a href="https://wa.me/212612650112?text=Je veux le pack Silver (100DH)" target="_blank" rel="noopener noreferrer" class="block text-center bg-gray-800 text-white py-4 rounded-xl font-bold hover:bg-gray-700 transition">Choisir Silver</a>
                 </div>
 
-                <!-- Lavage Gold -->
-                <div class="bg-white p-8 rounded-3xl shadow-2xl border-2 border-blue-600 relative scale-105 z-10 flex flex-col">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-6 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">
-                        Plus Populaire
+                <!-- Lavage Gold (FEU ET VAPEUR) -->
+                <div class="p-8 rounded-3xl premium-fire-steam border-2 relative scale-105 z-20 flex flex-col">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-orange-600 text-white px-6 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest text-center whitespace-nowrap shadow-lg flex items-center gap-2">
+                        <i class="fas fa-fire-alt"></i> Pack Premium <i class="fas fa-wind"></i>
                     </div>
-                    <div class="flex justify-between items-start mb-6 text-blue-600">
-                        <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-2xl">
+                    <div class="flex justify-between items-start mb-6 text-orange-600">
+                        <div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center text-2xl">
                             <i class="fas fa-star"></i>
                         </div>
                         <div class="text-3xl font-black">150<span class="text-sm font-bold">DH</span></div>
                     </div>
                     <h3 class="text-2xl font-extrabold mb-4">Lavage Gold</h3>
                     <ul class="text-gray-600 space-y-3 mb-8 flex-grow text-sm">
-                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Lavage Complet Expert</li>
-                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Parfumage habitacle</li>
-                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Dégraissage jantes approfondi</li>
-                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Traitement plastiques</li>
+                        <li><i class="fas fa-check text-orange-500 mr-2"></i> Lavage Complet Expert</li>
+                        <li><i class="fas fa-check text-orange-500 mr-2"></i> Parfumage habitacle luxe</li>
+                        <li><i class="fas fa-check text-orange-500 mr-2"></i> Dégraissage jantes approfondi</li>
+                        <li><i class="fas fa-check text-orange-500 mr-2"></i> Traitement protecteur plastiques</li>
                     </ul>
-                    <a href="https://wa.me/212612650112?text=Je veux le pack Gold (150DH)" target="_blank" rel="noopener noreferrer" class="block text-center bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-200">Choisir Gold</a>
+                    <a href="https://wa.me/212612650112?text=Je veux le pack Gold (150DH)" target="_blank" rel="noopener noreferrer" class="block text-center bg-orange-600 text-white py-4 rounded-xl font-bold hover:bg-orange-700 transition shadow-lg shadow-orange-200">Choisir Gold</a>
                 </div>
 
                 <!-- Lavage Platinum -->
-                <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all flex flex-col">
+                <div class="bg-white/90 p-8 rounded-3xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all flex flex-col">
                     <div class="flex justify-between items-start mb-6">
                         <div class="w-14 h-14 bg-yellow-100 text-yellow-600 rounded-2xl flex items-center justify-center text-2xl">
                             <i class="fas fa-gem"></i>
@@ -142,9 +251,9 @@
                     </div>
                     <h3 class="text-2xl font-extrabold mb-4">Lavage Platinum</h3>
                     <ul class="text-gray-600 space-y-3 mb-8 flex-grow text-sm">
-                        <li><i class="fas fa-check text-yellow-500 mr-2"></i> Tout le pack Gold</li>
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i> Tout le pack Gold inclus</li>
                         <li><i class="fas fa-check text-yellow-500 mr-2"></i> <strong>Polissage Carrosserie</strong></li>
-                        <li><i class="fas fa-check text-yellow-500 mr-2"></i> Lavage moteur</li>
+                        <li><i class="fas fa-check text-yellow-500 mr-2"></i> Nettoyage moteur expert</li>
                         <li><i class="fas fa-check text-yellow-500 mr-2"></i> Shampoing sièges & tapis</li>
                     </ul>
                     <a href="https://wa.me/212612650112?text=Je veux le pack Platinum (500DH)" target="_blank" rel="noopener noreferrer" class="block text-center bg-yellow-600 text-white py-4 rounded-xl font-bold hover:bg-yellow-700 transition shadow-lg shadow-yellow-100 text-black">Choisir Platinum</a>
@@ -153,31 +262,70 @@
         </div>
     </section>
 
-    <!-- Footer / Contact -->
+    <!-- Footer -->
     <footer class="bg-gray-900 text-white py-16 px-6">
         <div class="container mx-auto max-w-4xl text-center">
-            <h2 class="text-3xl font-bold mb-6">Prêt pour une voiture comme neuve ?</h2>
-            <p class="mb-10 text-gray-400">Contactez-nous directement sur WhatsApp. Nous sommes disponibles pour répondre à vos questions.</p>
+            <h2 class="text-3xl font-bold mb-6">Prêt pour un Wash Car à Casablanca ?</h2>
+            <p class="mb-10 text-gray-400">WashDaba : L'expert du lavage à domicile premium à Casablanca et partout au Maroc. Contactez-nous sur WhatsApp 7j/7.</p>
             
             <div class="bg-gray-800 p-8 rounded-3xl border border-gray-700 inline-block mb-10">
-                <p class="text-gray-400 mb-2 uppercase tracking-widest text-xs font-bold">Appelez ou écrivez-nous au</p>
-                <p class="text-3xl font-mono font-bold text-white tracking-widest">+212 612 65 01 12</p>
+                <p class="text-gray-400 mb-2 uppercase tracking-widest text-xs font-bold">Lavage Maroc - Contact</p>
+                <p class="text-2xl md:text-3xl font-mono font-bold text-white tracking-widest">+212 612 65 01 12</p>
             </div>
 
             <div class="flex justify-center gap-6 mb-12">
-                <a href="https://wa.me/212612650112" target="_blank" rel="noopener noreferrer" class="bg-green-500 p-4 rounded-full text-2xl hover:bg-green-600 transition shadow-lg"><i class="fab fa-whatsapp"></i></a>
-                <a href="#" class="bg-blue-600 p-4 rounded-full text-2xl hover:bg-blue-700 transition shadow-lg"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="bg-pink-600 p-4 rounded-full text-2xl hover:bg-pink-700 transition shadow-lg"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/212612650112" target="_blank" rel="noopener noreferrer" class="bg-green-500 p-4 rounded-full text-2xl hover:bg-green-600 transition shadow-lg" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="bg-pink-600 p-4 rounded-full text-2xl hover:bg-pink-700 transition shadow-lg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
 
-            <p class="text-gray-500 text-sm">© 2024 WashDaba Lavage. Tous droits réservés.</p>
+            <p class="text-gray-500 text-sm">© 2026 WashDaba - Expert Lavage à Domicile Casablanca & Maroc.</p>
         </div>
     </footer>
 
-    <!-- Floating Button WhatsApp -->
-    <a href="https://wa.me/212612650112" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 active:scale-95 transition-all z-[100] animate-bounce">
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/212612650112" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 active:scale-95 transition-all z-[100] animate-soft-bounce" aria-label="Contact WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <script>
+        // Générateur d'éléments flottants (Eau, Savon, Voitures)
+        const bgContainer = document.getElementById('bg-animation-container');
+        const iconClasses = [
+            'fas fa-soap',
+            'fas fa-droplet',
+            'fas fa-car-side',
+            'fas fa-wind',
+            'fas fa-sparkles'
+        ];
+
+        function createFloatingIcon() {
+            const iconWrap = document.createElement('div');
+            iconWrap.className = 'floating-element';
+            
+            const icon = document.createElement('i');
+            icon.className = iconClasses[Math.floor(Math.random() * iconClasses.length)];
+            
+            iconWrap.appendChild(icon);
+            
+            const startX = Math.random() * 100; // Position horizontale aléatoire
+            const duration = 15 + Math.random() * 15; // Durée entre 15 et 30s
+            const size = 1 + Math.random() * 2; // Taille entre 1 et 3rem
+            const delay = Math.random() * 20; // Délai de départ aléatoire
+
+            iconWrap.style.left = startX + 'vw';
+            iconWrap.style.fontSize = size + 'rem';
+            iconWrap.style.animationDuration = duration + 's';
+            iconWrap.style.animationDelay = '-' + delay + 's';
+
+            bgContainer.appendChild(iconWrap);
+        }
+
+        // Création initiale de 20 icônes
+        window.addEventListener('load', () => {
+            for(let i = 0; i < 20; i++) {
+                createFloatingIcon();
+            }
+        });
+    </script>
 </body>
 </html>
