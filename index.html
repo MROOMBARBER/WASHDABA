@@ -74,9 +74,14 @@
                 <a href="#booking" class="hover:text-blue-600 transition">Commander Casa</a>
                 <a href="#about" class="hover:text-blue-600 transition">Pourquoi nous ?</a>
             </div>
-            <a href="https://wa.me/212614660292" target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white px-5 py-2.5 rounded-full font-bold transition-all flex items-center gap-2 shadow-lg shadow-green-200">
-                <i class="fab fa-whatsapp text-xl"></i> WhatsApp Direct
-            </a>
+            <div class="flex items-center gap-3">
+                <a href="tel:+212614660292" class="bg-blue-600 hover:bg-blue-700 text-white p-2.5 md:px-4 md:py-2.5 rounded-full font-bold transition-all flex items-center gap-2 shadow-lg shadow-blue-200" title="Appeler directement">
+                    <i class="fas fa-phone-alt"></i> <span class="hidden md:inline">Appel</span>
+                </a>
+                <a href="https://wa.me/212614660292" target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white p-2.5 md:px-4 md:py-2.5 rounded-full font-bold transition-all flex items-center gap-2 shadow-lg shadow-green-200" title="Contacter par WhatsApp">
+                    <i class="fab fa-whatsapp md:text-xl"></i> <span class="hidden md:inline">WhatsApp</span>
+                </a>
+            </div>
         </nav>
     </header>
 
@@ -248,9 +253,14 @@
                     </select>
                 </div>
 
-                <button onclick="sendOrderWhatsApp()" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 rounded-2xl shadow-lg transition-all flex items-center justify-center gap-3 text-lg cursor-pointer">
-                    <i class="fab fa-whatsapp text-2xl"></i> Commander via WhatsApp
-                </button>
+                <div class="flex flex-col sm:flex-row gap-4 mt-4">
+                    <button onclick="sendOrderWhatsApp()" class="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-4 rounded-2xl shadow-lg transition-all flex items-center justify-center gap-3 text-lg cursor-pointer">
+                        <i class="fab fa-whatsapp text-2xl"></i> WhatsApp
+                    </button>
+                    <a href="tel:+212614660292" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-2xl shadow-lg transition-all flex items-center justify-center gap-3 text-lg cursor-pointer text-center">
+                        <i class="fas fa-phone-alt text-xl"></i> Appel Direct
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -259,16 +269,25 @@
     <footer class="bg-gray-900 text-white py-16 px-6">
         <div class="container mx-auto max-w-4xl text-center">
             <h2 class="text-3xl font-bold mb-4">Besoin d'un lavage auto à Casablanca ?</h2>
-            <p class="mb-8 text-gray-400 text-sm">Votre service expert de lavage f dar. Contactez notre équipe mobile directement sur WhatsApp 7j/7.</p>
+            <p class="mb-8 text-gray-400 text-sm">Votre service expert de lavage f dar. Appelez-nous ou contactez notre équipe sur WhatsApp 7j/7.</p>
             
-            <div class="bg-gray-800 p-6 rounded-3xl border border-gray-700 inline-block mb-8 shadow-inner">
-                <p class="text-gray-400 mb-1 uppercase tracking-widest text-xs font-bold">Téléphone / WhatsApp direct</p>
-                <p class="text-3xl font-mono font-extrabold text-white tracking-wider">+212 614 66 02 92</p>
+            <div class="bg-gray-800 p-6 rounded-3xl border border-gray-700 inline-block mb-8 shadow-inner hover:bg-gray-700 transition">
+                <p class="text-gray-400 mb-1 uppercase tracking-widest text-xs font-bold">Appel & WhatsApp direct</p>
+                <a href="tel:+212614660292" class="text-3xl font-mono font-extrabold text-white tracking-wider block hover:text-blue-400 transition">+212 614 66 02 92</a>
             </div>
 
-            <div class="flex justify-center mb-8">
-                <a href="https://wa.me/212614660292" target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-bold transition shadow-lg flex items-center gap-3">
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+                <a href="https://wa.me/212614660292" target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-bold transition shadow-lg flex items-center justify-center gap-3">
                     <i class="fab fa-whatsapp text-2xl"></i> Écrire sur WhatsApp
+                </a>
+                <a href="tel:+212614660292" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-bold transition shadow-lg flex items-center justify-center gap-3">
+                    <i class="fas fa-phone-alt text-xl"></i> Appeler Maintenant
+                </a>
+            </div>
+
+            <div class="mb-6">
+                <a href="mailto:contact@washdaba.com" class="text-gray-400 hover:text-white transition inline-flex items-center gap-2 text-sm font-medium">
+                    <i class="fas fa-envelope"></i> contact@washdaba.com
                 </a>
             </div>
 
@@ -276,10 +295,15 @@
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/212614660292" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 active:scale-95 transition-all z-[100] animate-bounce" aria-label="Contact WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <!-- Floating Buttons (Call + WhatsApp) -->
+    <div class="fixed bottom-6 right-6 flex flex-col gap-4 z-[100]">
+        <a href="tel:+212614660292" class="bg-blue-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-xl hover:scale-110 active:scale-95 transition-all self-end" aria-label="Appeler directement">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+        <a href="https://wa.me/212614660292" target="_blank" rel="noopener noreferrer" class="bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 active:scale-95 transition-all animate-bounce" aria-label="Contact WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
 
     <script>
         function selectPack(packName) {
