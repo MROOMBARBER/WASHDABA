@@ -1,183 +1,583 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WashDaba - Lavage Auto à Domicile</title>
+    <title>Lavage Auto à Domicile Casablanca | WASH DABA</title>
+    <meta name="description" content="WASH DABA propose le lavage auto à domicile à Casablanca. Silver 100 DH, VIP 150 DH et lavage complet 800 DH. Réservez directement sur WhatsApp au 0612650112.">
+    
+    <!-- Mots-clés (SEO legacy, mais toujours utile pour certains moteurs) -->
+    <meta name="keywords" content="lavage à domicile Casablanca, lavage auto à domicile Casablanca, lavage voiture à domicile Casablanca, nettoyage voiture à domicile Casablanca, car wash Casablanca, lavage automobile Casablanca, nettoyage intérieur voiture Casablanca, nettoyage complet voiture Casablanca, detailing voiture Casablanca, lavage voiture mobile Casablanca, lavage auto mobile Casablanca, WASH DABA">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.washdaba.ma/"> <!-- Remplacer par le vrai domaine une fois en ligne -->
+
+    <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+    <meta property="og:title" content="Lavage Auto à Domicile Casablanca | WASH DABA">
+    <meta property="og:description" content="Votre voiture propre sans vous déplacer à Casablanca. Service premium à domicile. Réservez sur WhatsApp !">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.washdaba.ma/">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons (Phosphor Icons) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#2563eb', // Blue-600
+                        secondary: '#1e40af', // Blue-800
+                        dark: '#0f172a', // Slate-900
+                        whatsapp: '#25D366',
+                        whatsappDark: '#128C7E'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Schema.org LocalBusiness, Service, Offer -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoWash",
+      "name": "WASH DABA",
+      "image": "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "@id": "https://www.washdaba.ma/",
+      "url": "https://www.washdaba.ma/",
+      "telephone": "+212612650112",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Casablanca",
+        "addressCountry": "MA"
+      },
+      "areaServed": "Casablanca",
+      "description": "WASH DABA propose le lavage auto à domicile à Casablanca. Service mobile professionnel.",
+      "priceRange": "100 DH - 800 DH",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services de Lavage Auto à Domicile",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pack Silver"
+            },
+            "price": "100.00",
+            "priceCurrency": "MAD"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pack VIP"
+            },
+            "price": "150.00",
+            "priceCurrency": "MAD"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pack Complet"
+            },
+            "price": "800.00",
+            "priceCurrency": "MAD"
+          }
+        ]
+      }
+    }
+    </script>
+
+    <!-- Schema.org FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Combien coûte un lavage de voiture à domicile à Casablanca ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Chez WASH DABA, nos prix commencent à 100 DH pour le Pack Silver, 150 DH pour le Pack VIP et 800 DH pour un lavage complet."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Vous déplacez-vous partout à Casablanca ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, WASH DABA se déplace à votre domicile ou à votre bureau dans tout Casablanca."
+        }
+      }]
+    }
+    </script>
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        /* Custom Styles for aesthetic touches */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .hero-pattern {
+            background-color: #0f172a;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231e293b' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
         
-        /* Background avec l'image que tu as envoyée */
-        .hero-section { 
-            background: linear-gradient(rgba(13, 30, 77, 0.85), rgba(30, 58, 138, 0.7)), 
-                        url('https://i.postimg.cc/0NRcqCpc/photo-5857324030485007518-y.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+        /* Floating WhatsApp Button Animation */
+        @keyframes pulse-whatsapp {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .float-wa {
+            animation: pulse-whatsapp 2s infinite;
         }
 
-        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        /* Image Lazy Loading fade-in */
+        img.lazy {
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        img.lazy.loaded {
+            opacity: 1;
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-gray-50 text-slate-800 antialiased selection:bg-primary selection:text-white flex flex-col min-h-screen">
 
-    <!-- En-tête -->
-    <header class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-2 text-blue-700 font-bold text-2xl tracking-tight">
-                <i class="fas fa-car-wash"></i>
-                <span>WashDaba</span>
-            </div>
-            <div class="hidden md:flex gap-8 font-medium">
-                <a href="#services" class="hover:text-blue-600 transition">Services</a>
-                <a href="#about" class="hover:text-blue-600 transition">À Propos</a>
-            </div>
-            <a href="https://wa.me/212612650112" target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full font-bold transition-all flex items-center gap-2 shadow-lg shadow-green-200">
-                <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
-        </nav>
-    </header>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-effect border-b border-gray-200 shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="flex items-center gap-2 group">
+                        <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-primary/30 group-hover:scale-105 transition-transform">
+                            <i class="ph-fill ph-car-profile"></i>
+                        </div>
+                        <span class="font-black text-2xl tracking-tight text-dark">WASH <span class="text-primary">DABA</span></span>
+                    </a>
+                </div>
 
-    <!-- Section Héros avec l'image -->
-    <section class="hero-section text-white py-24 md:py-32 px-6">
-        <div class="container mx-auto text-center">
-            <h1 class="text-4xl md:text-7xl font-extrabold mb-6 leading-tight">
-                Le Lavage Auto <br><span class="text-blue-300 text-3xl md:text-5xl uppercase tracking-widest">Premium à Domicile</span>
-            </h1>
-            <p class="text-lg md:text-xl mb-12 text-blue-50 max-w-2xl mx-auto font-light">
-                Une propreté irréprochable sans bouger de chez vous. Découvrez l'expérience WashDaba partout où vous êtes.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-5 justify-center">
-                <a href="https://wa.me/212612650112?text=Bonjour WashDaba, je souhaite commander un lavage" target="_blank" rel="noopener noreferrer" class="bg-white text-blue-900 px-10 py-5 rounded-2xl font-bold text-xl hover:bg-blue-50 transition-all shadow-xl hover:-translate-y-1">
-                    Commander maintenant
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-slate-600 hover:text-primary font-semibold transition-colors">Services</a>
+                    <a href="#tarifs" class="text-slate-600 hover:text-primary font-semibold transition-colors">Tarifs</a>
+                    <a href="#contact" class="text-slate-600 hover:text-primary font-semibold transition-colors">Contact</a>
+                    <a href="https://wa.me/212612650112?text=Bonjour%2C%20je%20veux%20un%20lavage" target="_blank" rel="noopener noreferrer" class="bg-whatsapp hover:bg-whatsappDark text-white px-6 py-2.5 rounded-full font-bold shadow-lg shadow-whatsapp/30 transition-all hover:-translate-y-0.5 flex items-center gap-2">
+                        <i class="ph-fill ph-whatsapp-logo text-xl"></i>
+                        Réserver
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-dark focus:outline-none p-2">
+                        <i class="ph ph-list text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-xl absolute w-full left-0">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#services" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-primary hover:bg-gray-50">Services</a>
+                <a href="#tarifs" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-primary hover:bg-gray-50">Tarifs</a>
+                <a href="#contact" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-primary hover:bg-gray-50">Contact</a>
+                <a href="https://wa.me/212612650112?text=Bonjour%2C%20je%20veux%20un%20lavage" target="_blank" rel="noopener noreferrer" class="mt-4 flex w-full justify-center items-center gap-2 bg-whatsapp text-white px-5 py-3 rounded-xl font-bold shadow-md">
+                    <i class="ph-fill ph-whatsapp-logo text-xl"></i>
+                    Réserver sur WhatsApp
                 </a>
-                <a href="#services" class="bg-blue-600/20 backdrop-blur-sm border-2 border-white/40 px-10 py-5 rounded-2xl font-bold text-xl hover:bg-white/20 transition-all">
-                    Nos Tarifs
-                </a>
             </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden hero-pattern">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Lavage voiture à domicile Casablanca" class="w-full h-full object-cover opacity-30 lazy" data-src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80">
+            <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/90 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-blue-200 text-sm font-semibold mb-6">
+                    <i class="ph-fill ph-map-pin text-primary"></i>
+                    Disponible partout à Casablanca
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+                    Lavage Auto à <span class="text-primary">Domicile</span><br> à Casablanca
+                </h1>
+                
+                <p class="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed font-light max-w-xl">
+                    Votre voiture propre sans vous déplacer. <strong>WASH DABA</strong> se déplace chez vous, au bureau ou à l’endroit de votre choix à Casablanca. Gain de temps et résultat professionnel garanti.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/212612650112?text=Bonjour%2C%20je%20veux%20un%20lavage" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-center gap-3 bg-whatsapp hover:bg-whatsappDark text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-whatsapp/20 transition-all hover:-translate-y-1 w-full sm:w-auto">
+                        <i class="ph-fill ph-whatsapp-logo text-2xl group-hover:scale-110 transition-transform"></i>
+                        Réserver sur WhatsApp
+                    </a>
+                    <a href="#tarifs" class="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/20 px-8 py-4 rounded-xl font-semibold text-lg transition-all w-full sm:w-auto">
+                        Voir les tarifs
+                        <i class="ph-bold ph-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Trust indicators -->
+                <div class="mt-12 flex items-center gap-6 text-sm text-gray-400 font-medium">
+                    <div class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-whatsapp text-lg"></i> Produits Premium</div>
+                    <div class="flex items-center gap-2"><i class="ph-fill ph-clock text-whatsapp text-lg"></i> Ponctualité</div>
+                    <div class="flex items-center gap-2"><i class="ph-fill ph-drop text-whatsapp text-lg"></i> Sans trace</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative Shape Divider -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10">
+            <svg class="relative block w-full h-[50px] lg:h-[80px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="fill-gray-50"></path>
+            </svg>
         </div>
     </section>
 
-    <!-- Pourquoi nous ? -->
-    <section id="about" class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-                <div class="p-6">
-                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-clock"></i></div>
-                    <h3 class="text-xl font-bold mb-2">Gain de Temps</h3>
-                    <p class="text-gray-600 text-sm">On s'occupe de tout pendant que vous vous reposez ou travaillez.</p>
-                </div>
-                <div class="p-6">
-                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-hand-sparkles"></i></div>
-                    <h3 class="text-xl font-bold mb-2">Service Premium</h3>
-                    <p class="text-gray-600 text-sm">Des produits de haute qualité pour protéger votre peinture et votre intérieur.</p>
-                </div>
-                <div class="p-6">
-                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-mobile-alt"></i></div>
-                    <h3 class="text-xl font-bold mb-2">Facile & Rapide</h3>
-                    <p class="text-gray-600 text-sm">Une simple commande WhatsApp et notre équipe arrive chez vous.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Services -->
-    <section id="services" class="py-20 px-6 bg-gray-50">
-        <div class="container mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4">Nos Packs de Lavage</h2>
-                <div class="h-1.5 w-24 bg-blue-600 mx-auto rounded-full"></div>
+    <!-- Avantages / Services Section -->
+    <section id="services" class="py-20 bg-gray-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-primary font-bold tracking-wider uppercase text-sm mb-2">Pourquoi nous choisir</h2>
+                <h3 class="text-3xl md:text-4xl font-black text-dark mb-4">Le meilleur du nettoyage voiture à domicile à Casablanca</h3>
+                <p class="text-slate-600 text-lg">Nous apportons la station de lavage directement à vous. Profitez d'un car wash professionnel pendant que vous travaillez ou vous reposez.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <!-- Lavage Silver -->
-                <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all flex flex-col">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="w-14 h-14 bg-gray-100 text-gray-600 rounded-2xl flex items-center justify-center text-2xl">
-                            <i class="fas fa-tint"></i>
-                        </div>
-                        <div class="text-3xl font-black text-gray-800">100<span class="text-sm font-bold">DH</span></div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl shadow-gray-200/50 hover:-translate-y-2 transition-transform duration-300 border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-50 text-primary rounded-2xl flex items-center justify-center text-3xl mb-6">
+                        <i class="ph-fill ph-house-line"></i>
                     </div>
-                    <h3 class="text-2xl font-extrabold mb-4">Lavage Silver</h3>
-                    <ul class="text-gray-600 space-y-3 mb-8 flex-grow">
-                        <li><i class="fas fa-check text-green-500 mr-2"></i> Lavage extérieur</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i> Nettoyage intérieur</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i> Aspirateur Professionnel</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i> Nettoyage des Jantes</li>
-                    </ul>
-                    <a href="https://wa.me/212612650112?text=Je veux le pack Silver (100DH)" target="_blank" rel="noopener noreferrer" class="block text-center bg-gray-800 text-white py-4 rounded-xl font-bold hover:bg-gray-700 transition">Choisir Silver</a>
+                    <h4 class="text-xl font-bold text-dark mb-3">100% Mobile</h4>
+                    <p class="text-slate-600">Plus besoin de faire la queue à la station. Nous venons à votre domicile, résidence ou parking d'entreprise partout à Casablanca.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl shadow-gray-200/50 hover:-translate-y-2 transition-transform duration-300 border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-50 text-primary rounded-2xl flex items-center justify-center text-3xl mb-6">
+                        <i class="ph-fill ph-sparkle"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-dark mb-3">Qualité Detailing</h4>
+                    <p class="text-slate-600">Nettoyage intérieur et extérieur minutieux. Nous utilisons des produits professionnels pour protéger votre carrosserie et raviver vos plastiques.</p>
                 </div>
 
-                <!-- Lavage Gold -->
-                <div class="bg-white p-8 rounded-3xl shadow-2xl border-2 border-blue-600 relative scale-105 z-10 flex flex-col">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-6 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">
-                        Plus Populaire
+                <!-- Feature 3 -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl shadow-gray-200/50 hover:-translate-y-2 transition-transform duration-300 border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-50 text-primary rounded-2xl flex items-center justify-center text-3xl mb-6">
+                        <i class="ph-fill ph-clock-countdown"></i>
                     </div>
-                    <div class="flex justify-between items-start mb-6 text-blue-600">
-                        <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-2xl">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="text-3xl font-black">150<span class="text-sm font-bold">DH</span></div>
-                    </div>
-                    <h3 class="text-2xl font-extrabold mb-4">Lavage Gold</h3>
-                    <ul class="text-gray-600 space-y-3 mb-8 flex-grow text-sm">
-                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Lavage Complet Expert</li>
-                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Parfumage habitacle</li>
-                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Dégraissage jantes approfondi</li>
-                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Traitement plastiques</li>
-                    </ul>
-                    <a href="https://wa.me/212612650112?text=Je veux le pack Gold (150DH)" target="_blank" rel="noopener noreferrer" class="block text-center bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-200">Choisir Gold</a>
-                </div>
-
-                <!-- Lavage Platinum -->
-                <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all flex flex-col">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="w-14 h-14 bg-yellow-100 text-yellow-600 rounded-2xl flex items-center justify-center text-2xl">
-                            <i class="fas fa-gem"></i>
-                        </div>
-                        <div class="text-3xl font-black text-gray-800">500<span class="text-sm font-bold">DH</span></div>
-                    </div>
-                    <h3 class="text-2xl font-extrabold mb-4">Lavage Platinum</h3>
-                    <ul class="text-gray-600 space-y-3 mb-8 flex-grow text-sm">
-                        <li><i class="fas fa-check text-yellow-500 mr-2"></i> Tout le pack Gold</li>
-                        <li><i class="fas fa-check text-yellow-500 mr-2"></i> <strong>Polissage Carrosserie</strong></li>
-                        <li><i class="fas fa-check text-yellow-500 mr-2"></i> Lavage moteur</li>
-                        <li><i class="fas fa-check text-yellow-500 mr-2"></i> Shampoing sièges & tapis</li>
-                    </ul>
-                    <a href="https://wa.me/212612650112?text=Je veux le pack Platinum (500DH)" target="_blank" rel="noopener noreferrer" class="block text-center bg-yellow-600 text-white py-4 rounded-xl font-bold hover:bg-yellow-700 transition shadow-lg shadow-yellow-100 text-black">Choisir Platinum</a>
+                    <h4 class="text-xl font-bold text-dark mb-3">Réservation Facile</h4>
+                    <p class="text-slate-600">Un simple message WhatsApp suffit. Fixez l'heure et l'endroit, notre équipe de <em>lavage automobile</em> s'occupe du reste.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer / Contact -->
-    <footer class="bg-gray-900 text-white py-16 px-6">
-        <div class="container mx-auto max-w-4xl text-center">
-            <h2 class="text-3xl font-bold mb-6">Prêt pour une voiture comme neuve ?</h2>
-            <p class="mb-10 text-gray-400">Contactez-nous directement sur WhatsApp. Nous sommes disponibles pour répondre à vos questions.</p>
+    <!-- Pricing Section -->
+    <section id="tarifs" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-primary font-bold tracking-wider uppercase text-sm mb-2">Nos Tarifs Transparents</h2>
+                <h3 class="text-3xl md:text-4xl font-black text-dark mb-4">Choisissez le lavage adapté à votre voiture</h3>
+                <p class="text-slate-600 text-lg">Des forfaits clairs, sans frais cachés. Déplacement inclus dans Casablanca.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-center">
+                
+                <!-- Pack Silver -->
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-200 hover:shadow-xl transition-shadow relative">
+                    <h4 class="text-2xl font-bold text-dark mb-2">PACK SILVER</h4>
+                    <p class="text-slate-500 mb-6 text-sm">L'essentiel pour une voiture propre au quotidien.</p>
+                    <div class="mb-8 flex items-baseline gap-2">
+                        <span class="text-5xl font-black text-dark">100</span>
+                        <span class="text-xl font-bold text-slate-500">DH</span>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8 text-slate-700">
+                        <li class="flex items-start gap-3">
+                            <i class="ph-bold ph-check text-primary mt-1"></i>
+                            <span>Lavage extérieur carrosserie</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ph-bold ph-check text-primary mt-1"></i>
+                            <span>Nettoyage des jantes</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ph-bold ph-check text-primary mt-1"></i>
+                            <span>Aspiration habitacle & coffre</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ph-bold ph-check text-primary mt-1"></i>
+                            <span>Nettoyage des vitres</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-400">
+                            <i class="ph-bold ph-x mt-1"></i>
+                            <span>Parfum d'intérieur</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="https://wa.me/212612650112?text=Bonjour%2C%20je%20veux%20r%C3%A9server%20le%20Pack%20Silver%20%C3%A0%20100%20DH." target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-dark hover:bg-black text-white py-4 rounded-xl font-bold transition-colors">
+                        Réserver sur WhatsApp
+                    </a>
+                </div>
+
+                <!-- Pack VIP (Highlighted) -->
+                <div class="bg-primary rounded-3xl p-8 shadow-2xl shadow-primary/40 transform lg:-translate-y-4 relative overflow-hidden text-white border-4 border-white">
+                    <!-- Ribbon -->
+                    <div class="absolute top-6 -right-10 bg-yellow-400 text-yellow-900 text-xs font-black px-10 py-1 rotate-45">LE PLUS POPULAIRE</div>
+                    
+                    <h4 class="text-2xl font-bold mb-2 text-white">PACK VIP</h4>
+                    <p class="text-blue-100 mb-6 text-sm">Le meilleur rapport qualité/prix pour briller.</p>
+                    <div class="mb-8 flex items-baseline gap-2">
+                        <span class="text-5xl font-black text-white">150</span>
+                        <span class="text-xl font-bold text-blue-200">DH</span>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8 text-blue-50">
+                        <li class="flex items-start gap-3">
+                            <i class="ph-bold ph-check text-yellow-400 mt-1"></i>
+                            <span>Tout le <strong>Pack Silver</strong> inclus</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ph-bold ph-check text-yellow-400 mt-1"></i>
+                            <span>Nettoyage complet plastiques</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ph-bold ph-check text-yellow-400 mt-1"></i>
+                            <span>Brillant à pneus (Dressing)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ph-bold ph-check text-yellow-400 mt-1"></i>
+                            <span>Cire de finition express</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ph-bold ph-check text-yellow-400 mt-1"></i>
+                            <span>Parfum d'intérieur premium</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="https://wa.me/212612650112?text=Bonjour%2C%20je%20veux%20r%C3%A9server%20le%20Pack%20VIP%20%C3%A0%20150%20DH." target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-white hover:bg-gray-100 text-primary py-4 rounded-xl font-black text-lg transition-colors shadow-lg">
+                        Réserver Pack VIP
+                    </a>
+                </div>
+
+                <!-- Pack Complet -->
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-200 hover:shadow-xl transition-shadow relative">
+                    <h4 class="text-2xl font-bold text-dark mb-2">PACK COMPLET</h4>
+                    <p class="text-slate-500 mb-6 text-sm">Rénovation et detailing complet à domicile.</p>
+                    <div class="mb-8 flex items-baseline gap-2">
+                        <span class="text-5xl font-black text-dark">800</span>
+                        <span class="text-xl font-bold text-slate-500">DH</span>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8 text-slate-700">
+                        <li class="flex items-start gap-3">
+                            <i class="ph-bold ph-check text-primary mt-1"></i>
+                            <span>Tout le <strong>Pack VIP</strong> inclus</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ph-bold ph-check text-primary mt-1"></i>
+                            <span>Shampouinage des sièges</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ph-bold ph-check text-primary mt-1"></i>
+                            <span>Nettoyage plafonnier</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ph-bold ph-check text-primary mt-1"></i>
+                            <span>Nettoyage moteur superficiel</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ph-bold ph-check text-primary mt-1"></i>
+                            <span>Désinfection habitacle</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="https://wa.me/212612650112?text=Bonjour%2C%20je%20veux%20r%C3%A9server%20le%20Pack%20Complet%20%C3%A0%20800%20DH." target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-dark hover:bg-black text-white py-4 rounded-xl font-bold transition-colors">
+                        Réserver sur WhatsApp
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Contact Section -->
+    <section id="contact" class="py-20 bg-dark relative overflow-hidden">
+        <!-- Abstract background elements -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-72 h-72 bg-primary rounded-full blur-3xl opacity-20"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-72 h-72 bg-blue-400 rounded-full blur-3xl opacity-20"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/10 text-white mb-8 border border-white/20">
+                <i class="ph-fill ph-phone-call text-4xl"></i>
+            </div>
+            <h2 class="text-3xl md:text-5xl font-black text-white mb-6">Prêt à faire briller votre voiture ?</h2>
+            <p class="text-xl text-gray-300 mb-10">Contactez-nous directement par téléphone ou sur WhatsApp pour fixer votre rendez-vous de lavage auto à Casablanca.</p>
             
-            <div class="bg-gray-800 p-8 rounded-3xl border border-gray-700 inline-block mb-10">
-                <p class="text-gray-400 mb-2 uppercase tracking-widest text-xs font-bold">Appelez ou écrivez-nous au</p>
-                <p class="text-3xl font-mono font-bold text-white tracking-widest">+212 612 65 01 12</p>
+            <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl flex flex-col md:flex-row items-center justify-center gap-8 max-w-2xl mx-auto">
+                <div class="text-center md:text-left">
+                    <p class="text-gray-400 text-sm font-semibold uppercase tracking-wider mb-1">Notre Numéro</p>
+                    <p class="text-3xl font-black text-white tracking-wider">06 12 65 01 12</p>
+                </div>
+                
+                <div class="hidden md:block w-px h-16 bg-white/10"></div>
+                
+                <div class="flex flex-col w-full md:w-auto gap-3">
+                    <a href="tel:+212612650112" class="flex items-center justify-center gap-2 bg-white text-dark hover:bg-gray-100 px-6 py-3 rounded-xl font-bold transition-colors w-full">
+                        <i class="ph-fill ph-phone"></i>
+                        Appeler maintenant
+                    </a>
+                    <a href="https://wa.me/212612650112?text=Bonjour%2C%20je%20veux%20un%20lavage" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 bg-whatsapp hover:bg-whatsappDark text-white px-6 py-3 rounded-xl font-bold transition-colors w-full">
+                        <i class="ph-fill ph-whatsapp-logo"></i>
+                        WhatsApp
+                    </a>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="flex justify-center gap-6 mb-12">
-                <a href="https://wa.me/212612650112" target="_blank" rel="noopener noreferrer" class="bg-green-500 p-4 rounded-full text-2xl hover:bg-green-600 transition shadow-lg"><i class="fab fa-whatsapp"></i></a>
-                <a href="#" class="bg-blue-600 p-4 rounded-full text-2xl hover:bg-blue-700 transition shadow-lg"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="bg-pink-600 p-4 rounded-full text-2xl hover:bg-pink-700 transition shadow-lg"><i class="fab fa-instagram"></i></a>
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="ph-fill ph-car-profile text-primary text-2xl"></i>
+                        <span class="font-black text-xl text-white">WASH <span class="text-primary">DABA</span></span>
+                    </div>
+                    <p class="text-sm">Le spécialiste du lavage automobile à domicile et sur lieu de travail à Casablanca, Maroc. Service rapide, pro et écologique.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Liens Rapides</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#services" class="hover:text-primary transition-colors">Nos Services</a></li>
+                        <li><a href="#tarifs" class="hover:text-primary transition-colors">Tarifs Detailing</a></li>
+                        <li><a href="https://wa.me/212612650112?text=Bonjour%2C%20je%20veux%20un%20lavage" target="_blank" class="hover:text-primary transition-colors">Réserver un lavage</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-map-pin text-primary"></i> Casablanca, Maroc</li>
+                        <li class="flex items-center gap-2"><a href="tel:+212612650112" class="hover:text-white transition-colors"><i class="ph-fill ph-phone text-primary"></i> +212 612 650 112</a></li>
+                        <li class="flex items-center gap-2"><a href="https://wa.me/212612650112?text=Bonjour%2C%20je%20veux%20un%20lavage" target="_blank" class="text-whatsapp hover:text-white transition-colors font-bold"><i class="ph-fill ph-whatsapp-logo"></i> Réserver sur WhatsApp</a></li>
+                    </ul>
+                </div>
             </div>
-
-            <p class="text-gray-500 text-sm">© 2024 WashDaba Lavage. Tous droits réservés.</p>
+            <div class="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
+                <p>&copy; 2026 WASH DABA - Lavage Auto à Domicile Casablanca. Tous droits réservés.</p>
+                <div class="mt-4 md:mt-0 flex gap-4">
+                    <span>Nettoyage voiture Casablanca</span>
+                    <span>Car wash mobile</span>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <!-- Floating Button WhatsApp -->
-    <a href="https://wa.me/212612650112" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 active:scale-95 transition-all z-[100] animate-bounce">
-        <i class="fab fa-whatsapp"></i>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/212612650112?text=Bonjour%2C%20je%20veux%20un%20lavage" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-whatsapp text-white px-4 py-3 rounded-full shadow-2xl hover:bg-whatsappDark transition-all hover:scale-105 float-wa group cursor-pointer"
+       aria-label="Réserver sur WhatsApp">
+        <span class="hidden md:block font-bold text-sm tracking-wide group-hover:pr-2 transition-all">Réserver sur WhatsApp</span>
+        <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+            <i class="ph-fill ph-whatsapp-logo text-3xl"></i>
+        </div>
     </a>
 
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Mobile Menu Toggle
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const icon = btn.querySelector('i');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                if (menu.classList.contains('hidden')) {
+                    icon.classList.remove('ph-x');
+                    icon.classList.add('ph-list');
+                } else {
+                    icon.classList.remove('ph-list');
+                    icon.classList.add('ph-x');
+                }
+            });
+
+            // Close mobile menu when clicking a link
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    icon.classList.remove('ph-x');
+                    icon.classList.add('ph-list');
+                });
+            });
+
+            // 2. Navbar Styling on Scroll
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    navbar.classList.add('shadow-md');
+                    navbar.classList.remove('shadow-sm');
+                } else {
+                    navbar.classList.add('shadow-sm');
+                    navbar.classList.remove('shadow-md');
+                }
+            });
+
+            // 3. Lazy Loading Images
+            const lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+            if ("IntersectionObserver" in window) {
+                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.onload = () => {
+                                lazyImage.classList.add("loaded");
+                            };
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            } else {
+                // Fallback for older browsers
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImage.src = lazyImage.dataset.src;
+                    lazyImage.classList.add("loaded");
+                });
+            }
+        });
+    </script>
 </body>
 </html>
